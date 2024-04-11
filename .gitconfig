@@ -1,2 +1,7 @@
+[user]
+	name = Cihan Yayla
+	email = cyayla@me.com
+	username = cyayla
+
 [http]
 	postBuffer = 157286400
