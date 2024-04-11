@@ -1,0 +1,79 @@
+[colors.bright]
+black = "0xa3a3a3"
+blue = "0xafafff"
+cyan = "0x7cb7b7"
+green = "0x70aa70"
+magenta = "0xbb7dc0"
+red = "0xcc7070"
+white = "0xaaaaaa"
+yellow = "0xb7b777"
+
+[colors.cursor]
+cursor = "0xaaaaaa"
+text = "0x000000"
+
+[colors.normal]
+black = "0x3a3a3a"
+blue = "0xafafff"
+cyan = "0x7cccc7"
+green = "0x70aa70"
+magenta = "0xbb77cc"
+red = "0xcc7070"
+white = "0xaaaaaa"
+yellow = "0xaaaa70"
+
+[colors.primary]
+background = "0x1c1c1c"
+foreground = "0xbcbcbc"
+
+[colors.selection]
+background = "0xaaaaaa"
+text = "0x000000"
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[env]
+TERM = "screen-256color"
+# TERM = "xterm-256color"
+
+[font]
+size = 20.0
+
+[font.normal]
+family = "BerkeleyMono Nerd Font"
+style = "Regular"
+
+[mouse]
+hide_when_typing = false
+
+[scrolling]
+# auto_scroll = true
+# faux_multiplier = 3
+history = 10000
+multiplier = 3
+
+[shell]
+args = ["new-session", "-A", "-D", "-s", "main"]
+program = "/opt/homebrew/bin/tmux"
+
+[window]
+decorations = "full"
+dynamic_padding = false
+opacity = 1
+option_as_alt = "Both"
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.dimensions]
+columns = 150
+lines = 50
+
+[window.padding]
+x = 2
+y = 4
+
+[window.position]
+x = 0
+y = 0
