@@ -25,6 +25,7 @@ cask 'cloudflare-warp'
 cask 'logi-options-plus'
 cask 'spotify'
 
+brew 'upx'
 brew 'tmux'
 brew 'neovim'
 brew 'lazygit'
