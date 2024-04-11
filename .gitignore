@@ -1,0 +1,44 @@
+*
+
+# gitignore
+!.gitignore
+
+# gitconfig
+!.gitconfig
+
+# vi
+!.vimrc
+
+# config directory
+.config/*
+!.config/
+
+# brewfile
+!.config/Brewfile
+
+# neovim
+!.config/nvim/
+!.config/nvim/**/
+!.config/nvim/**/**
+
+# lazygit
+!.config/lazygit/
+!.config/lazygit/**/
+!.config/lazygit/**/**
+
+# alacritty
+!.config/alacritty/
+!.config/alacritty/alacritty.yml
+
+# tmux
+!.config/tmux/
+!.config/tmux/tmux.conf
+
+# fish
+!.config/fish/
+!.config/fish/config.fish
+!.config/fish/fish_plugins
+
+# yapf
+!.config/yapf/
+!.config/yapf/style
