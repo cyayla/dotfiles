@@ -2,8 +2,8 @@ return {
   "nvim-tree/nvim-tree.lua",
   config = function()
     local nvimtree = require("nvim-tree")
-    G.loaded_netrw = 1
-    G.loaded_netrwPlugin = 1
+    G.g.loaded_netrw = 1
+    G.g.loaded_netrwPlugin = 1
     nvimtree.setup({
       hijack_cursor = true,
       view = {
@@ -36,6 +36,6 @@ return {
       },
     })
     -- keymaps
-    Keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+    G.keymap.set("n", "<leader>e", "<CMD>NvimTreeToggle<CR>")
   end,
 }

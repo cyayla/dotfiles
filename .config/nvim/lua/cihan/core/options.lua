@@ -1,52 +1,52 @@
 -- line numbers
-Opt.relativenumber = true
-Opt.number = true
+G.opt.relativenumber = true
+G.opt.number = true
 
 -- tabs & indentation
-Opt.tabstop = 2
-Opt.shiftwidth = 2
-Opt.expandtab = true
-Opt.autoindent = true
+G.opt.tabstop = 2
+G.opt.shiftwidth = 2
+G.opt.expandtab = true
+G.opt.autoindent = true
 -- Opt.softtabstop = 2
 
 -- scroll
-Opt.scrolloff = 10
+G.opt.scrolloff = 10
 
 -- line wrapping
-Opt.wrap = false
+G.opt.wrap = false
 
 -- search settings
-Opt.ignorecase = true
-Opt.smartcase = true
-Opt.incsearch = true
+G.opt.ignorecase = true
+G.opt.smartcase = true
+G.opt.incsearch = true
 
 -- cursor line
-Opt.cursorline = true
+G.opt.cursorline = true
 
 -- appearance
-Opt.laststatus = 3
-Opt.signcolumn = "yes:1"
-Opt.background = "dark"
-Opt.termguicolors = true
-Opt.confirm = true
+G.opt.laststatus = 3
+G.opt.signcolumn = "yes:1"
+G.opt.background = "dark"
+G.opt.termguicolors = true
+G.opt.confirm = true
 
 -- backspace
-Opt.backspace = "indent,eol,start"
+G.opt.backspace = "indent,eol,start"
 
 -- clipboard
-Opt.clipboard:append("unnamedplus")
+G.opt.clipboard:append("unnamedplus")
 
 -- swap file
-Opt.swapfile = false
-Opt.backup = false
+G.opt.swapfile = false
+G.opt.backup = false
 
 -- split windows
-Opt.splitright = true
-Opt.splitbelow = true
+G.opt.splitright = true
+G.opt.splitbelow = true
 
-Opt.iskeyword:append("-")
+G.opt.iskeyword:append("-")
 
-Opt.fillchars = {
+G.opt.fillchars = {
   vert = "│",
   fold = "⠀",
   eob = " ",
@@ -58,5 +58,5 @@ Opt.fillchars = {
 }
 
 -- languages
-local group = Api.nvim_create_augroup("PyIndentSize", { clear = true })
-ApiAutocmd("FileType", { pattern = "python", command = "setlocal tabstop=2 shiftwidth=2 expandtab", group = group })
+local group = G.api.nvim_create_augroup("PyIndentSize", { clear = true })
+G.autocmd("FileType", { pattern = "python", command = "setlocal tabstop=2 shiftwidth=2 expandtab", group = group })

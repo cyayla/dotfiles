@@ -12,8 +12,8 @@ return {
       -- svelte = { "eslint_d" },
       -- python = { "pylint" },
     }
-    local lint_augroup = Api.nvim_create_augroup("lint", { clear = true })
-    ApiAutocmd({
+    local lint_augroup = G.api.nvim_create_augroup("lint", { clear = true })
+    G.autocmd({
       "BufEnter",
       "BufWritePost",
       "InsertLeave",
@@ -25,7 +25,7 @@ return {
       end,
     })
     -- keymaps
-    Keymap.set("n", "<leader>l", function()
+    G.keymap.set("n", "<leader>l", function()
       lint.try_lint()
     end)
   end,

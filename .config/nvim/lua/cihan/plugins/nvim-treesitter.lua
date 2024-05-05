@@ -21,6 +21,7 @@ return {
           enable = true,
         },
         ensure_installed = {
+          "vimdoc",
           "lua",
           "json",
           "go",
@@ -59,8 +60,8 @@ return {
         },
       })
       -- keymaps
-      Keymap.set("n", "<leader>pg", "<CMD>TSPlaygroundToggle<CR>")
-      Keymap.set("n", "<leader>kk", "<CMD>TSHighlightCapturesUnderCursor<CR>")
+      G.keymap.set("n", "<leader>pg", "<CMD>TSPlaygroundToggle<CR>")
+      G.keymap.set("n", "<leader>kk", "<CMD>TSHighlightCapturesUnderCursor<CR>")
     end,
   },
 }

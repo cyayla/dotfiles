@@ -4,6 +4,6 @@ return {
     local oil = require("oil")
     oil.setup()
     -- keymaps
-    Keymap.set("n", "<leader>Oil", "<CMD>Oil<CR>")
+    G.keymap.set("n", "<leader>Oil", "<CMD>Oil<CR>")
   end,
 }

@@ -8,6 +8,6 @@ return {
       enabled = true,
     })
 
-    Keymap.set("n", "<Leader>nf", ":lua require('neogen').generate({ type = 'func' })<CR>", Opts)
+    G.keymap.set("n", "<Leader>nf", ":lua require('neogen').generate({ type = 'func' })<CR>", G.opts)
   end,
 }

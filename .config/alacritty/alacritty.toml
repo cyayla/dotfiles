@@ -35,7 +35,8 @@ blinking = "Off"
 shape = "Block"
 
 [env]
-TERM = "screen-256color"
+# TERM = "screen-256color"
+TERM = "tmux-256color"
 # TERM = "xterm-256color"
 
 [font]
@@ -59,9 +60,12 @@ args = ["new-session", "-A", "-D", "-s", "main"]
 program = "/opt/homebrew/bin/tmux"
 
 [window]
-decorations = "full"
+decorations = "Full"
+padding = { x = 2, y = 4 }
 dynamic_padding = false
-opacity = 1
+position = { x = 750, y = 250 }
+opacity = 0.95
+blur = true
 option_as_alt = "Both"
 startup_mode = "Windowed"
 title = "Alacritty"
@@ -69,11 +73,3 @@ title = "Alacritty"
 [window.dimensions]
 columns = 150
 lines = 50
-
-[window.padding]
-x = 2
-y = 4
-
-[window.position]
-x = 0
-y = 0

@@ -12,10 +12,10 @@ return {
         },
       })
       -- keymaps
-      Keymap.set("n", "<leader>S", '<CMD>lua require("spectre").open()<CR>')
-      Keymap.set("n", "<leader>sw", '<CMD>lua require("spectre").open_visual({select_word=true})<CR>')
-      Keymap.set("v", "<leader>sw", '<ESC><CMD>lua require("spectre").open_visual()<CR>')
-      Keymap.set("n", "<leader>sc", '<CMD>lua require("spectre").open_file_search({select_word=true})<CR>')
+      G.keymap.set("n", "<leader>S", '<CMD>lua require("spectre").open()<CR>')
+      G.keymap.set("n", "<leader>sw", '<CMD>lua require("spectre").open_visual({select_word=true})<CR>')
+      G.keymap.set("v", "<leader>sw", '<ESC><CMD>lua require("spectre").open_visual()<CR>')
+      G.keymap.set("n", "<leader>sc", '<CMD>lua require("spectre").open_file_search({select_word=true})<CR>')
     end,
   },
 }

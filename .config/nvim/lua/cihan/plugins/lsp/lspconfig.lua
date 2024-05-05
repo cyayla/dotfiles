@@ -9,34 +9,34 @@ return {
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local on_attach = function(client, bufnr)
-      Opts.buffer = bufnr
+      G.opts.buffer = bufnr
       -- keymaps
-      Opts.desc = "Show LSP references"
-      Keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", Opts) -- show definition, references
-      Opts.desc = "Go to declaration"
-      Keymap.set("n", "gD", vim.lsp.buf.declaration, Opts) -- go to declaration
-      Opts.desc = "Show LSP definitions"
-      Keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", Opts) -- show lsp definitions
-      Opts.desc = "Show LSP implementations"
-      Keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", Opts) -- show lsp implementations
-      Opts.desc = "Show LSP type definitions"
-      Keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", Opts) -- show lsp type definitions
-      Opts.desc = "See available code actions"
-      Keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, Opts) -- see available code actions, in visual mode will apply to selection
-      Opts.desc = "Smart rename"
-      Keymap.set("n", "<leader>rn", vim.lsp.buf.rename, Opts) -- smart rename
-      Opts.desc = "Show buffer diagnostics"
-      Keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", Opts) -- show  diagnostics for file
-      Opts.desc = "Show line diagnostics"
-      Keymap.set("n", "<leader>d", Diagnostic.open_float, Opts) -- show diagnostics for line
-      Opts.desc = "Go to previous diagnostic"
-      Keymap.set("n", "[d", Diagnostic.goto_prev, Opts) -- jump to previous diagnostic in buffer
-      Opts.desc = "Go to next diagnostic"
-      Keymap.set("n", "]d", Diagnostic.goto_next, Opts) -- jump to next diagnostic in buffer
-      Opts.desc = "Show documentation for what is under cursor"
-      Keymap.set("n", "K", vim.lsp.buf.hover, Opts) -- show documentation for what is under cursor
-      Opts.desc = "Restart LSP"
-      Keymap.set("n", "<leader>rs", ":LspRestart<CR>", Opts) -- mapping to restart lsp if necessary
+      G.opts.desc = "Show LSP references"
+      G.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", G.opts) -- show definition, references
+      G.opts.desc = "Go to declaration"
+      G.keymap.set("n", "gD", vim.lsp.buf.declaration, G.opts) -- go to declaration
+      G.opts.desc = "Show LSP definitions"
+      G.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", G.opts) -- show lsp definitions
+      G.opts.desc = "Show LSP implementations"
+      G.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", G.opts) -- show lsp implementations
+      G.opts.desc = "Show LSP type definitions"
+      G.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", G.opts) -- show lsp type definitions
+      G.opts.desc = "See available code actions"
+      G.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, G.opts) -- see available code actions, in visual mode will apply to selection
+      G.opts.desc = "Smart rename"
+      G.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, G.opts) -- smart rename
+      G.opts.desc = "Show buffer diagnostics"
+      G.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", G.opts) -- show  diagnostics for file
+      G.opts.desc = "Show line diagnostics"
+      G.keymap.set("n", "<leader>d", G.diagnostic.open_float, G.opts) -- show diagnostics for line
+      G.opts.desc = "Go to previous diagnostic"
+      G.keymap.set("n", "[d", G.diagnostic.goto_prev, G.opts) -- jump to previous diagnostic in buffer
+      G.opts.desc = "Go to next diagnostic"
+      G.keymap.set("n", "]d", G.diagnostic.goto_next, G.opts) -- jump to next diagnostic in buffer
+      G.opts.desc = "Show documentation for what is under cursor"
+      G.keymap.set("n", "K", vim.lsp.buf.hover, G.opts) -- show documentation for what is under cursor
+      G.opts.desc = "Restart LSP"
+      G.keymap.set("n", "<leader>rs", ":LspRestart<CR>", G.opts) -- mapping to restart lsp if necessary
     end
 
     -- used to enable autocompletion (assign to every lsp server config)
@@ -68,7 +68,7 @@ return {
       on_attach = on_attach,
       -- on_attach = function(client, bufnr)
       --   on_attach(client, bufnr)
-      --   ApiAutocmd("BufWritePost", {
+      --   G.autocmd("BufWritePost", {
       --     pattern = { "*.js", "*.ts" },
       --     callback = function(ctx)
       --       if client.name == "svelte" then
@@ -127,8 +127,8 @@ return {
           workspace = {
             -- make language server aware of runtime files
             library = {
-              [Fn.expand("$VIMRUNTIME/lua")] = true,
-              [Fn.stdpath("config") .. "/lua"] = true,
+              [G.fn.expand("$VIMRUNTIME/lua")] = true,
+              [G.fn.stdpath("config") .. "/lua"] = true,
             },
           },
         },
@@ -141,10 +141,10 @@ return {
     --   Fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     -- end
 
-    Diagnostic.config({
+    G.diagnostic.config({
       signs = false,
       update_in_insert = true,
-      underline = true,
+      underline = false,
       severity_sort = true,
       -- virtual_text = true,
       virtual_text = {
